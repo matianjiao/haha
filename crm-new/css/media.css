@@ -1,0 +1,57 @@
+/*=======适应各种屏幕========*/
+/*@media screen and (max-width: 1900px) and (min-width: 1640px) {*/
+
+/*}*/
+
+/*@media screen and (max-width: 1639px) and (min-width: 1535px) {*/
+
+/*}*/
+
+/*@media screen and (max-width: 1535px) and (min-width: 1370px) {*/
+
+/*}*/
+
+/*@media screen and (max-width: 1370px) and (min-width: 1290px) {*/
+
+/*}*/
+
+/*@media screen and (max-width: 1290px) and (min-width: 1030px) {*/
+
+/*}*/
+
+/*@media screen and (max-width: 1030px) {*/
+
+/*}*/
+@media screen and (max-width: 1360px) and (min-width: 1301px) {
+    .user-info select {
+        width: 95px !important;
+    }
+    .user-info input{
+        width: 348px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .user-info{
+        border: none;
+    }
+
+    .jiaoyi,.shangchuan {
+        padding-top: 30px;
+    }
+    .shangchuan{
+        border-top: 1px solid #DDE4ED;
+    }
+
+    .user-info select {
+        width: 100px !important;
+    }
+    .user-info input{
+        width: 320px;
+    }
+    .daili{
+        font-size: 12px;
+    }
+    .zhanghuleixing{
+        width: 80%;
+    }
+}

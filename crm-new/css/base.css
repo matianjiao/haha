@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "mtj";
+    src: url("../fonts/mtj.ttf");
+}
+
+html, body {
+    font-family: "微软雅黑";
+    /*font-family: "mtj";*/
+    width: 100%;
+    height: 100%;
+    font-weight: 100 !important;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.clear {
+    clear: both;
+}
+
+.kai {
+    display: block !important;
+}
+
+
+
+/*===============统一控制颜色===============*/
+body {
+    background: #E1E8F5;
+}
+
+.background {
+    background: #26ADA3;
+}
+
+.font16 {
+    font-size: 16px;
+}
+
+.font14 {
+    font-size: 14px;
+}
+
+/*页面中字体颜色*/
+.slide-right {
+    color: #515974;
+}
+
+.slide-right a {
+    color: #515974;
+}
+
+body {
+    color: #fff;
+}
+
+body a {
+    color: #fff
+}
+
+/*页面中a标签颜色*/
+/*.slide-right a{*/
+/*color: #515974;*/
+/*}*/
+
+/*左侧栏背景透明度*/
+.slide-left {
+    background: #1B1F2E;
+}
+
+/*按钮背景色*/
+.background {
+    background: #26ADA3;
+}
+
+/*背景图片模糊度*/
+.bg-blur {
+    float: left;
+    width: 100%;
+    height: 100%;
+    /*-webkit-filter: blur(15px);*/
+    /*-moz-filter: blur(15px);*/
+    /*-o-filter: blur(15px);*/
+    /*-ms-filter: blur(15px);*/
+    /*filter: blur(15px);*/
+}
+
+/*背景色*/
+.bg-color {
+    background: #F0F5FB;
+}
+
+.red {
+    color: #EE5A5D;
+}
+
+.green {
+    color: #4AB047;
+}
+.red-bg {
+    background: #EE5A5D;
+    color: #fff;
+}
+
+.green-bg {
+    background: #4AB047;
+    color: #fff;
+}
+
+/*加载居中*/
+.loading {
+    width: 30px;
+    height: 30px;
+    background: url("../images/loading.gif");
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.data-loading {
+    position: relative;
+}
+
+.dataLoading-item {
+    width: 97px;
+    height: 33px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    margin: 0 0 0 -49px;
+    background: url("../images/loading1.gif");
+    z-index: 2;
+}
+.tongbu{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+}

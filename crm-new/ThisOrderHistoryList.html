@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>crm系统</title>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport"-->
+    <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="ie-stand"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/index.js"></script>
+
+</head>
+<body id="body">
+<!--<div class=" bg-blur"></div>-->
+<div class="scall">
+    <div class="content-front">
+        <div class="slide-left font16">
+            <div class="logo" style="background: url('./images/logo.png') no-repeat center center"></div>
+            <div class="user">
+                <div class="user-item" style="background: url(images/user_03.png); background-size: cover;"></div>
+                <div class="name font14">
+                    <p>1000</p>
+                    <p>安琪</p>
+                </div>
+                <div class="clear"></div>
+                <p class="font14" style="padding-left: 30px;margin-top: 10px">余额 : $53465</p>
+            </div>
+            <ul class="fu">
+                <li><span class="icons icon1"></span> <a href="index.html">首页</a></li>
+
+                <div class="click" zhankai="false">
+                    <li><span class="icons icon2"></span>个人信息 <span class="open"></span></li>
+                    <ul class="zi">
+                        <a href="UserInfo.html">账户信息</a>
+                        <a href="Bank.html">银行信息</a>
+                        <a href="setPassword.html">密码修改</a>
+                    </ul>
+                </div>
+
+                <li class="current">
+                    <a href="ThisOrderList.html"><span class="icons icon3"></span>历史订单</a>
+                </li>
+
+                <li>
+                    <a href="MyDaiLi.html"><span class="icons icon4"></span>我的代理</a>
+                </li>
+
+                <li>
+                    <a href="ThisOrderList.html"><span class="icons icon5"></span>持仓订单</a>
+                </li>
+
+                <div class="click" zhankai="false">
+                    <li><span class="icons icon6"></span>资金管理 <span class="open"></span></li>
+                    <ul class="zi">
+                        <a href="InputMoney.html">入金</a>
+                        <a href="OutputMoney.html">出金</a>
+                        <a href="moneyList.html">出入金记录</a>
+                    </ul>
+                </div>
+
+                <div class="click" zhankai="false">
+                    <li><span class="icons icon7"></span>代理专区 <span class="open"></span></li>
+                    <ul class="zi">
+                        <a href="Team.html">团队管理</a>
+                        <a href="ApplyingList.html">总代理申请</a>
+                        <a href="lowerAgent.html">下级代理申请</a>
+                        <a href="rake-back.html">返佣记录</a>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div class="slide-right">
+            <header class="bg-color font16">
+                <div class="zuo-head">
+                    <img src="images\icon_33.png" alt=""> 历史订单
+                </div>
+                <div class="you-head">
+                    <div class="icon4 icon4-1"></div>
+                    <div class="icon4 icon4-2"></div>
+                    <div class="icon4 icon4-3"></div>
+                    <div class="icon4 icon4-4"></div>
+                    <div class="clear"></div>
+                </div>
+            </header>
+
+
+            <div class="row setPassword">
+                <!--出入金记录-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zhanghu">
+                    <div class="bg-color list-item">
+                        <div class="tubiao">
+                            <a href="ThisOrderList-zhexian.html" class="table zhexian-icon"></a>
+                            <a href="ThisOrderList-zhuzhuang.html" class="table zhuzhuang-icon"></a>
+                            <a href="ThisOrderList.html" class="table liebiao-icon1"></a>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="arrow-fu arrow-fu1">
+                            <div class="arrow arrow1"></div>
+                            <select name="" id="out-in" style="width:120px">
+                                <option>30</option>
+                                <option>20</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                        <div class="shuaxin"><img src="images/shuaxin_03.png" alt=""></div>
+                        <p>历史订单</p>
+
+                        <div class="row InOutInput">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <button class="list-btn">全部</button>
+                                <button class="list-btn" style="background: none;color: #535353">盈</button>
+                                <button class="list-btn" style="background: none;color: #535353">亏</button>
+                                <button class="list-btn" style="background: none;color: #535353">买</button>
+                                <button class="list-btn" style="background: none;color: #535353">卖</button>
+                                时间
+                                <input type="text"> 一 &nbsp; <input type="text">
+                                <input type="text" class="InOutInputSmall">
+                                <button style="margin: 0">
+                                    搜索
+                                    <!--<div class="loading"></div>-->
+                                </button>
+                            </div>
+                        </div>
+                        <!--列表-->
+                        <div class="InOutList historyList">
+                            <div class="row text-center">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left paixu">订单号</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">产品名称</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">开仓</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">关仓</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">交易量</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">开仓价</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">平仓价</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">盈亏</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">买卖</div>
+                            </div>
+                            <div class="row text-center ">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left">962920</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">AUDUSDbo</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 green">$10
+                                    <span style="vertical-align:middle;display:inline-block;width: 10px;height: 10px;overflow: hidden;background: url('./images/up.png') no-repeat center center;margin: 0px auto"></span>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span
+                                        style="width:46px;height:46px;vertical-align:middle;display:inline-block;overflow: hidden;background: url('./images/buy.png') no-repeat center center;background-size:cover;margin: 0px auto;"></span>
+                                </div>
+                            </div>
+                            <div class="row text-center ">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left">962920</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">AUDUSDbo</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 red">$10
+                                    <span style="vertical-align:middle;display:inline-block;width: 10px;height: 10px;overflow: hidden;background: url('./images/down.png') no-repeat center center;margin: 0px auto"></span>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span
+                                        style="width:46px;height:46px;vertical-align:middle;display:inline-block;overflow: hidden;background: url('./images/sell.png') no-repeat center center;background-size:cover;margin: 0px auto;"></span>
+                                </div>
+                            </div>
+                            <div class="row text-center ">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left">962920</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">AUDUSDbo</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 green">$10
+                                    <span style="vertical-align:middle;display:inline-block;width: 10px;height: 10px;overflow: hidden;background: url('./images/up.png') no-repeat center center;margin: 0px auto"></span>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span
+                                        style="width:46px;height:46px;vertical-align:middle;display:inline-block;overflow: hidden;background: url('./images/buy.png') no-repeat center center;background-size:cover;margin: 0px auto;"></span>
+                                </div>
+                            </div>
+                            <div class="row text-center ">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left">962920</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">AUDUSDbo</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 green">$10
+                                    <span style="vertical-align:middle;display:inline-block;width: 10px;height: 10px;overflow: hidden;background: url('./images/up.png') no-repeat center center;margin: 0px auto"></span>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span
+                                        style="width:46px;height:46px;vertical-align:middle;display:inline-block;overflow: hidden;background: url('./images/buy.png') no-repeat center center;background-size:cover;margin: 0px auto;"></span>
+                                </div>
+                            </div>
+                            <div class="row text-center ">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left">962920</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">AUDUSDbo</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 red">$10
+                                    <span style="vertical-align:middle;display:inline-block;width: 10px;height: 10px;overflow: hidden;background: url('./images/down.png') no-repeat center center;margin: 0px auto"></span>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span
+                                        style="width:46px;height:46px;vertical-align:middle;display:inline-block;overflow: hidden;background: url('./images/sell.png') no-repeat center center;background-size:cover;margin: 0px auto;"></span>
+                                </div>
+                            </div>
+                            <div class="row text-center ">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left">962920</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">AUDUSDbo</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 red">$10
+                                    <span style="vertical-align:middle;display:inline-block;width: 10px;height: 10px;overflow: hidden;background: url('./images/down.png') no-repeat center center;margin: 0px auto"></span>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span
+                                        style="width:46px;height:46px;vertical-align:middle;display:inline-block;overflow: hidden;background: url('./images/sell.png') no-repeat center center;background-size:cover;margin: 0px auto;"></span>
+                                </div>
+                            </div>
+                            <div class="row text-center ">
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left">962920</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">AUDUSDbo</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12.08</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">12</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">12345.54555</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 red">$10
+                                    <span style="vertical-align:middle;display:inline-block;width: 10px;height: 10px;overflow: hidden;background: url('./images/down.png') no-repeat center center;margin: 0px auto"></span>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span
+                                        style="width:46px;height:46px;vertical-align:middle;display:inline-block;overflow: hidden;background: url('./images/sell.png') no-repeat center center;background-size:cover;margin: 0px auto;"></span>
+                                </div>
+                            </div>
+                            <div class="row text-right ">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">小计：3150 有效交易量：2850 买：1520 卖：1630
+                                    总盈亏：-114.0000
+                                </div>
+                            </div>
+                            <div class="row text-center" style="height: 80px">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px"
+                                     id="PageList">
+                                    <a href="" style=" margin: 0 10px;"><img src="images/zuoyou_03.png" alt=""></a>
+                                    <a href="">1</a>
+                                    <a href="">2</a>
+                                    <a href="">3</a>
+                                    <a href="">4</a>
+                                    <a href="">5</a>
+                                    <a href="">6</a> …
+                                    <a href="">14</a>
+                                    <a href="" style=" margin: 0 10px;"><img src="images/zuoyou_05.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

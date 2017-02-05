@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>crm系统</title>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport"-->
+    <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="ie-stand"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/index.js"></script>
+
+</head>
+<body id="body">
+<!--<div class=" bg-blur"></div>-->
+<div class="scall">
+    <div class="content-front">
+        <div class="slide-left font16">
+            <div class="logo" style="background: url('./images/logo.png') no-repeat center center"></div>
+            <div class="user">
+                <div class="user-item" style="background: url(images/user_03.png); background-size: cover;"></div>
+                <div class="name font14">
+                    <p>1000</p>
+                    <p>安琪</p>
+                </div>
+                <div class="clear"></div>
+                <p class="font14" style="padding-left: 30px;margin-top: 10px">余额 : $53465</p>
+            </div>
+            <ul class="fu">
+                <li><span class="icons icon1"></span> <a href="index.html">首页</a></li>
+
+                <div class="click" zhankai="false">
+                    <li><span class="icons icon2"></span>个人信息 <span class="open"></span></li>
+                    <ul class="zi">
+                        <a href="UserInfo.html">账户信息</a>
+                        <a href="Bank.html">银行信息</a>
+                        <a href="setPassword.html">密码修改</a>
+                    </ul>
+                </div>
+
+                <li>
+                    <a href="ThisOrderList.html"><span class="icons icon3"></span>历史订单</a>
+                </li>
+
+                <li class="current">
+                    <a href="MyDaiLi.html"><span class="icons icon4"></span>我的代理</a>
+                </li>
+
+                <li>
+                    <a href="ThisOrderList.html"><span class="icons icon5"></span>持仓订单</a>
+                </li>
+
+                <div class="click" zhankai="false">
+                    <li><span class="icons icon6"></span>资金管理 <span class="open"></span></li>
+                    <ul class="zi">
+                        <a href="InputMoney.html">入金</a>
+                        <a href="OutputMoney.html">出金</a>
+                        <a href="moneyList.html">出入金记录</a>
+                    </ul>
+                </div>
+
+                <div class="click">
+                    <li><span class="icons icon7"></span>代理专区 <span
+                            class="open"></span></li>
+                    <ul class="zi">
+                        <a href="Team.html">团队管理</a>
+                        <a href="ApplyingList.html">总代理申请</a>
+                        <a href="lowerAgent.html">下级代理申请</a>
+                        <a href="rake-back.html">返佣记录</a>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div class="slide-right">
+            <header class="bg-color font16">
+                <div class="zuo-head">
+                    <img src="images\icon_77.png" alt=""> 代理专区 > 团队管理
+                </div>
+                <div class="you-head">
+                    <div class="icon4 icon4-1"></div>
+                    <div class="icon4 icon4-2"></div>
+                    <div class="icon4 icon4-3"></div>
+                    <div class="icon4 icon4-4"></div>
+                    <div class="clear"></div>
+                </div>
+            </header>
+
+
+            <div class="row setPassword">
+                <!--出入金记录-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zhanghu daili">
+                    <div class="bg-color list-item">
+                        <div class="tubiao">
+                            <a href="ThisOrderList-zhexian.html" class="table zhexian-icon"></a>
+                            <a href="ThisOrderList-zhuzhuang.html" class="table zhuzhuang-icon"></a>
+                            <a href="ThisOrderList.html" class="table liebiao-icon1"></a>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="arrow-fu arrow-fu1">
+                            <div class="arrow arrow1"></div>
+                            <select name="" id="out-in" style="width:120px">
+                                <option>30</option>
+                                <option>20</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                        <div class="shuaxin"><img src="images/shuaxin_03.png" alt=""></div>
+                        <p>团队管理</p>
+
+                        <div class="row InOutInput">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                时间
+                                <input type="text"> 一 &nbsp; <input type="text">
+                                <input type="text" class="InOutInputSmall">
+                                <button style="margin: 0">
+                                    搜索
+                                    <!--<div class="loading"></div>-->
+                                </button>
+                            </div>
+                        </div>
+                        <div class="InOutList mydaili">
+                            <!--<div class="dataLoading-item"></div>-->
+                            <div class="row text-center">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left">账户</div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">账户性质</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 "></div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">历史交易</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">成交量</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">余额</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">净值</div>
+                            </div>
+
+                            <!--1-->
+                            <div class="parent" kai="true">
+                                <!--红-->
+                                <div class="row text-center">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left">
+                                        <div class="jia-jian"></div>
+                                        <img src="images/person_03.png">1000 安琪
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="zhanghuleixing red-bg">代理账户</div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">三级代理</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00</div>
+                                </div>
+
+                                <div class="zi">
+                                    <!--绿-->
+                                    <div class="row text-center">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                             style="padding-left: 40px"><img src="images/person_07.png">1000 安琪
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="zhanghuleixing green-bg">代理账户</div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00</div>
+                                    </div>
+                                    <!--绿-->
+                                    <div class="row text-center">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                             style="padding-left: 40px"><img src="images/person_07.png">1000 安琪
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="zhanghuleixing green-bg">代理账户</div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00</div>
+                                    </div>
+                                    <!--红-->
+                                    <div class="row text-center">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                             style="padding-left: 20px"><img
+                                                src="images/person_03.png">1000 安琪
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="zhanghuleixing red-bg">代理账户</div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">三级代理</div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--2-->
+                            <div class="parent" kai="true">
+                                <!--红-->
+                                <div class="row text-center">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left">
+                                        <div class="jia-jian"></div>
+                                        <img src="images/person_03.png">1000 安琪
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <div class="zhanghuleixing red-bg">代理账户</div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">三级代理</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00</div>
+                                </div>
+
+                                <div class="zi">
+                                    <!--绿-->
+                                    <div class="row text-center">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                             style="padding-left: 40px"><img src="images/person_07.png">1000 安琪
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="zhanghuleixing green-bg">代理账户</div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00</div>
+                                    </div>
+                                    <!--绿-->
+                                    <div class="row text-center">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                             style="padding-left: 40px"><img src="images/person_07.png">1000 安琪
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="zhanghuleixing green-bg">代理账户</div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00</div>
+                                    </div>
+                                    <!--红-2绿-->
+                                    <div class="parent" kai="true">
+                                        <div class="row text-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                                 style="padding-left: 20px">
+                                                <div class="jia-jian"></div>
+                                                <img src="images/person_03.png">1000 安琪
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                <div class="zhanghuleixing red-bg">代理账户</div>
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">三级代理</div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00</div>
+                                        </div>
+
+                                        <div class="zi">
+                                            <!--绿-->
+                                            <div class="row text-center">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                                     style="padding-left: 60px"><img src="images/person_07.png">1000 安琪
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                    <div class="zhanghuleixing green-bg">代理账户</div>
+                                                </div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00
+                                                </div>
+                                            </div>
+                                            <!--绿-->
+                                            <div class="row text-center">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                                     style="padding-left: 60px"><img src="images/person_07.png">1000 安琪
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                    <div class="zhanghuleixing green-bg">代理账户</div>
+                                                </div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--单红-->
+                                    <div class="row text-center">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                             style="padding-left: 40px">
+                                            <img src="images/person_03.png">1000 安琪
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                            <div class="zhanghuleixing red-bg">代理账户</div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">三级代理</div>
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00</div>
+                                    </div>
+
+                                    <div class="parent" kai="true">
+                                        <!--红-->
+                                        <div class="row text-center">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                                 style="padding-left: 20px">
+                                                <div class="jia-jian"></div>
+                                                <img src="images/person_03.png">1000 安琪
+                                            </div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                <div class="zhanghuleixing red-bg">代理账户</div>
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">三级代理</div>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00</div>
+                                        </div>
+                                        <div class="zi parent " kai="true">
+                                            <!--红-->
+                                            <div class="row text-center">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                                     style="padding-left: 40px">
+                                                    <div class="jia-jian"></div>
+                                                    <img src="images/person_03.png">1000 安琪
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                    <div class="zhanghuleixing red-bg">代理账户</div>
+                                                </div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">三级代理</div>
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">$150.00
+                                                </div>
+                                            </div>
+                                            <div class="zi parent" kai="true">
+                                                <!--红-->
+                                                <div class="row text-center">
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                                         style="padding-left: 60px">
+                                                        <div class="jia-jian"></div>
+                                                        <img src="images/person_03.png">1000 安琪
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                        <div class="zhanghuleixing red-bg">代理账户</div>
+                                                    </div>
+                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">三级代理</div>
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">
+                                                        $150.00
+                                                    </div>
+                                                </div>
+                                                <div class="zi parent" kai="true">
+                                                    <!--红-->
+                                                    <div class="row text-center">
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                                             style="padding-left: 80px">
+                                                            <div class="jia-jian"></div>
+                                                            <img src="images/person_03.png">1000 安琪
+                                                        </div>
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                            <div class="zhanghuleixing red-bg">代理账户</div>
+                                                        </div>
+                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">三级代理</div>
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00</div>
+                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00</div>
+                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">
+                                                            $150.00
+                                                        </div>
+                                                    </div>
+                                                    <div class="zi">
+                                                        <!--绿-->
+                                                        <div class="row text-center">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                                                 style="padding-left: 100px"><img
+                                                                    src="images/person_07.png">1000 安琪
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                                <div class="zhanghuleixing green-bg">代理账户</div>
+                                                            </div>
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00
+                                                            </div>
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00
+                                                            </div>
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">
+                                                                $150.00
+                                                            </div>
+                                                        </div>
+                                                        <!--绿-->
+                                                        <div class="row text-center">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left"
+                                                                 style="padding-left: 100px"><img
+                                                                    src="images/person_07.png">1000 安琪
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                                                <div class="zhanghuleixing green-bg">代理账户</div>
+                                                            </div>
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">$-150.00
+                                                            </div>
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">0.51手</div>
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">$150.00
+                                                            </div>
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-right">
+                                                                $150.00
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

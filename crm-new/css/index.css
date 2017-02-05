@@ -1,0 +1,779 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.scall {
+    width: 100%;
+    overflow-y: auto;
+    padding-bottom: 30px;
+}
+
+.content-front {
+    width: 100%;
+    height: auto;
+
+    /*position: absolute;*/
+    /*left: 0px;*/
+    /*right: 0px;*/
+}
+
+/*=========首页=========*/
+/*左侧栏*/
+.slide-left {
+    width: 240px;
+    height: 100%;
+    background: #1B1F2E;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+}
+
+.logo {
+    width: 100%;
+    height: 96px;
+    border-bottom: 1px solid #101421;
+}
+
+.user {
+    margin: 30px 0 20px;
+}
+
+.user-item {
+    width: 72px;
+    height: 72px;
+    float: left;
+    margin-left: 30px;
+
+}
+
+.name {
+    float: right;
+    margin: 12px 88px 0 0;
+}
+
+.slide-left .fu {
+    width: 100%;
+}
+
+.fu li {
+    width: 240px;
+    line-height: 50px;
+    padding: 0 10px 0 75px;
+    position: relative;
+    cursor: pointer;
+    -moz-transition: all .1s; /* Firefox 4 */
+    -webkit-transition: all .1s; /* Safari 和 Chrome */
+    -o-transition: all .1s; /* Opera */
+}
+
+.fu .open {
+    width: 48px;
+    height: 50px;
+    background: url("../images/kai.png");
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+.fu .icons {
+    width: 22px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    left: 40px;
+
+}
+
+.fu .current {
+    background: #101421;
+    border-left: 5px solid #F0515C;
+}
+
+.icon1 {
+    background: url("../images/icon_1.png");
+}
+
+.icon2 {
+    background: url("../images/icon_2.png");
+}
+
+.icon2-2 {
+    background: url("../images/icon_22.png");
+}
+
+.icon3 {
+    background: url("../images/icon_3.png");
+}
+
+.icon4 {
+    background: url("../images/icon_4.png");
+}
+
+.icon5 {
+    background: url("../images/icon_5.png");
+}
+
+.icon6 {
+    background: url("../images/icon_6.png");
+}
+
+.icon7 {
+    background: url("../images/icon_7.png");
+}
+
+.fu li:hover .icon1 {
+    background: url("../images/icon_11.png");
+}
+
+.fu li:hover .icon2 {
+    background: url("../images/icon_22.png");
+}
+
+.fu li:hover .icon3 {
+    background: url("../images/icon_33.png");
+}
+
+.fu li:hover .icon4 {
+    background: url("../images/icon_44.png");
+}
+
+.fu li:hover .icon5 {
+    background: url("../images/icon_55.png");
+}
+
+.fu li:hover .icon6 {
+    background: url("../images/icon_66.png");
+}
+
+.fu li:hover .icon7 {
+    background: url("../images/icon_77.png");
+}
+
+.fu li:hover {
+    background: #101421;
+    color: #85888A;
+    border-left: 5px solid #F0515C !important;
+}
+
+.fu li:hover a {
+    color: #85888A;
+}
+
+.fu a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.zi a {
+    padding-left: 75px;
+    -moz-transition: all .1s; /* Firefox 4 */
+    -webkit-transition: all .1s; /* Safari 和 Chrome */
+    -o-transition: all .1s; /* Opera */
+}
+
+.zi a:hover {
+    border-left: 5px solid #F0515C !important;
+    color: #85888A;
+}
+
+.fu .zi {
+    display: none;
+}
+
+/*=============右部分===========*/
+.slide-right {
+    width: 100%;
+    height: 100%;
+    padding-left: 240px;
+    overflow-y: auto;
+    color: #4A516A;
+}
+
+/*头部*/
+header {
+    width: 100%;
+    height: 96px;
+    box-shadow: 0 2px 5px #D0D5E0;
+}
+
+.zuo-head {
+    line-height: 96px;
+    margin-left: 35px;
+    float: left;
+}
+
+.you-head {
+    float: right;
+    margin: 38px 30px 0 0;
+}
+
+.icons4 {
+    width: 22px;
+    height: 21px;
+    float: left;
+    margin-right: 14px;
+}
+
+.icons4 a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.icon4-1 {
+    background: url("../images/icons_04.png") no-repeat 0px 0;
+}
+
+.icon4-2 {
+    background: url("../images/icons_04.png") no-repeat -34px 0;
+}
+
+.icon4-3 {
+    background: url("../images/icons_04.png") no-repeat -68px 0;
+}
+
+.icon4-4 {
+    background: url("../images/icons_04.png") no-repeat -102px 0;
+}
+
+/*-----右下------*/
+.list-item {
+    box-shadow: 0 2px 5px #D0D5E0;
+    border-radius: 4px;
+}
+
+/*公告*/
+.gonggao {
+    margin: 30px;
+}
+
+.gonggao .row {
+    padding: 14px 20px;
+    border-bottom: 1px solid #E1E7F0;
+}
+
+/*---信息---*/
+.xinxi {
+    margin-left: 30px;
+}
+
+.xinxi .row {
+    padding: 14px 10px;
+    border-bottom: 1px solid #E1E7F0;
+    margin: 0 10px;
+}
+
+.xinxi p {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    border-bottom: 1px solid #E1E7F0;
+}
+
+.zhanghu, .jiaoyi {
+    padding: 0 30px 10px 0;
+}
+
+.high-row {
+    height: 85px;
+    padding: 0 10px !important;
+    line-height: 85px;
+}
+
+/*修改密码*/
+.setPassword {
+    margin: 30px 0 0 30px;
+    position: relative;
+}
+
+.setPassword .row {
+    padding: 14px 20px;
+    margin: 0 10px;
+}
+
+.setPassword p {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    border-bottom: 1px solid #E1E7F0;
+}
+
+.setPassword span {
+    display: inline-block;
+    width: 80px;
+}
+
+input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #DDE4ED;
+    width: 400px;
+    padding: 10px 0px 10px 20px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 2px 45px;
+    border: none;
+    border-radius: 50px;
+    line-height: 35px;
+    text-align: center;
+    background: #54a6de;
+    margin: 10px 0 30px 30px;
+    color: #fff;
+    position: relative;
+}
+
+
+
+select {
+    padding: 8px 10px;
+    background: none;
+    border-radius: 50px;
+    margin-left: 5px;
+    border: 1px solid #DDE4ED;
+    /*去掉select三角*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+/*ie  去掉select三角*/
+select::-ms-expand {
+    display: none;
+}
+
+/*用户*/
+.user-info {
+    position: relative;
+    border-right: 1px solid #DDE4ED;
+    padding: 10px 0;
+}
+
+.user-info .user-head {
+    position: absolute;
+    left: -130px;
+    top: 28px;
+}
+
+.user-info div {
+    padding-left: 160px;
+    margin: 4px 0;
+}
+
+.user-info span {
+    width: 90px;
+}
+
+.shangchuan h6 {
+    font-weight: 100;
+    padding-left: 40px;
+    line-height: 40px;
+}
+
+.upload {
+    width: 278px;
+    height: 180px;
+    border-radius: 5px;
+    font-size: 50px;
+    border: 1px solid #DDE4ED;
+    color: #cecece;
+    font-weight: 100;
+    line-height: 180px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+/*银行*/
+.bank div {
+    padding-left: 30px;
+}
+
+.bank span {
+    width: 115px;
+}
+
+.bankimg {
+    padding: 5px 10px;
+    border: 1px solid #E0E6EF;
+    border-radius: 8px;
+    float: left;
+    margin: 10px 10px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.bankimg:hover .bankHover {
+    display: block;
+}
+
+.addBank {
+    width: 282px;
+    height: 180px;
+    border: 1px solid #E0E6EF;
+    margin-top: 10px;
+    float: left;
+    border-radius: 8px;
+}
+
+.addBank a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.bankHover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: none;
+    cursor: pointer;
+}
+
+.bankHover p {
+    border: none;
+    text-align: center;
+    padding: 0px;
+    margin: 0;
+}
+
+/*资金管理*/
+/*出金*/
+.beizhu {
+    width: 490px;
+    height: 185px;
+    border: 1px solid #dde4ed;
+    border-radius: 5px;
+    display: inline-block;
+}
+.arrow-fu {
+    border-radius: 50px;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    display: inline-block;
+}
+.arrow-fu1{
+    float: right;
+    margin:10px 72px !important;
+}
+.arrow {
+    background: url("../images/arrow_03.png");
+    width: 21px;
+    height: 15px;
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    padding: 0 !important;
+}
+.arrow1{
+    top:12px;
+    right: 6px;
+    margin: 0 !important;
+    background: url("../images/arrow_03.png") no-repeat center center #F0F5FB;
+}
+
+.chooseBank {
+    width: 400px;
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 50px;
+    margin-left: 5px;
+    border: 1px solid #DDE4ED;
+    position: relative;
+}
+
+.chooseBank-item {
+    width: 368px;
+    position: absolute;
+    top: 36px;
+    left: 14px;
+    z-index: 10000;
+    background: #E1E8F5;
+    display: none;
+}
+
+.banks {
+    padding: 0 25px 2px;
+    border-bottom: 1px solid #ACB3C8;
+}
+
+.banks:hover {
+    background: #FFFFFF;
+    box-shadow: 0 5px 8px #5a5a5a;
+}
+
+.addSmall {
+    width: 100%;
+    padding: 20px 25px 22px;
+    display: block;
+}
+
+/*入金*/
+.inputBank {
+    border-radius: 50px;
+    background: #E1E8F5;
+    width: 200px;
+    float: left;
+    margin: 15px;
+    position: relative;
+}
+
+.sure {
+    position: absolute;
+    right: -8px;
+    top: 8px;
+    display: none;
+}
+
+.bankCurrent {
+    background: #fff;
+    box-shadow: 0 3px 5px #7b7b7b;
+}
+
+/*出入金记录*/
+#out-in {
+    width: 70px !important;
+}
+
+#out-in option {
+    background: #ababab;
+    color: #fff;
+}
+
+#out-in option:hover {
+    background: #787D91;
+}
+
+.shuaxin {
+    position: absolute;
+    right: 70px;
+    top: 20px;
+}
+
+.InOutList .row {
+    margin: 0 20px;
+    padding: 14px 10px;
+    border-bottom: 1px solid #E0E7F0;
+    position: relative;
+}
+
+.list-btn {
+    margin: 0 6px 0 0;
+    padding: 0px 20px;
+    border: 1px solid #509DD7;
+}
+
+.InOutInput {
+    border-bottom: 1px solid #E0E7F0;
+}
+
+.InOutInput input {
+    width: 14%;
+    border: 1px solid #DDE4ED;
+    border-radius: 50px;
+}
+
+.InOutInput .InOutInputSmall {
+    width: 12%;
+}
+
+.paixu-arrow {
+    width: 12px;
+    height: 6px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.list-click {
+    cursor: pointer;
+}
+
+.listclick-add {
+    background: #fff;
+    box-shadow: 0 1px 15px #676767;
+}
+
+.list-hover {
+    text-align: left;
+    border-radius: 5px;
+    margin-top: 10px !important;
+    background: #fff;
+    z-index: 1;
+    -webkit-box-shadow: 0 1px 15px #676767;
+    -moz-box-shadow: 0 1px 15px #676767;
+    box-shadow: 0 1px 15px #676767;
+    display: none;
+}
+
+.list-hover span {
+    width: 98px;
+}
+
+.list-hover input {
+    width: 66%;
+    margin: 0px;
+}
+
+.agree-no {
+    width: 44%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    float: left;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.agreen {
+    background: #49B253;
+    margin-right: 10px;
+}
+
+.noagreen {
+    background: #EC4856;
+}
+
+/*持仓订单*/
+.tubiao {
+    position: absolute;
+    top: 15px;
+    right: 160px;
+}
+
+.table {
+    width: 24px;
+    height: 24px;
+    float: left;
+    margin-right: 20px;
+}
+
+.zhexian-icon {
+    background: url("../images/tubiao.png") 0 0;
+}
+
+.zhuzhuang-icon {
+    background: url("../images/tubiao.png") 66px 0;
+}
+
+.liebiao-icon {
+    background: url("../images/tubiao.png") 24px 0;
+}
+
+.zhexian-icon1 {
+    background: url("../images/tubiao1.png") 0 0;
+}
+
+.zhuzhuang-icon1 {
+    background: url("../images/tubiao1.png") 66px 0;
+}
+
+.liebiao-icon1 {
+    background: url("../images/tubiao1.png") 24px 0;
+}
+
+.zhexian {
+    width: 100%;
+    height: 500px;
+    background: url("../images/zhexian_03.png") no-repeat;
+    background-size: contain;
+}
+
+.zhuzhuang {
+    width: 100%;
+    height: 500px;
+    background: url("../images/zhuzhuang_03.png") no-repeat;
+    background-size: contain;
+}
+
+.InOutInput select option {
+    color: #7B7C7E;
+    font-weight: bold;
+}
+
+/*历史订单*/
+.historyList .row {
+    line-height: 46px;
+    padding: 10px;
+}
+
+#PageList img {
+    margin: -3px -1px 0;
+}
+
+#PageList a {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #509DD7;
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 24px;
+    color: #509DD7;
+}
+
+#PageList {
+    color: #509DD7;
+}
+
+/*团队管理*/
+.jia-jian {
+    width: 14px;
+    height: 14px;
+    background: url("../images/addjian_03.png");
+    display: inline-block;
+    cursor: pointer;
+}
+
+/*我的代理*/
+.mydaili .row {
+    padding: 8px 10px;
+    line-height: 30px;
+}
+
+.mydaili .row:hover {
+    background: #fff;
+    box-shadow: 0 1px 15px #676767;
+}
+
+.zhanghuleixing {
+    width: 50%;
+    text-align: center;
+    border-radius: 5px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+
+
+/*入金成功*/
+.dingwei {
+    width: 100%;
+    padding-left: 60px;
+}
+.mtj-content {
+    width: 100%;
+    position: relative;
+}
+.mtj-content .dui {
+    width: 50px;
+    height: 50px;
+    background: url(../images/login.png);
+    position: absolute;
+    top: -12px;
+    left: -70px;
+}
+.mtj-content .inputsuccess {
+    margin-bottom:7px;
+}
+button a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #fff !important;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改-身份</title>
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/vector.js"></script>
+    <script>
+        $(function () {
+            // 初始化 传入dom id
+            var victor = new Victor("container", "output");
+            var theme = [
+                ["#262626", "#3C3C3C"],
+            ]
+            var color = theme[0];
+            victor(color).set();
+
+        });
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="output">
+        <div class="scroll">
+            <div class="zhuce-bg">
+                <form action="" id="zhuce" class="zhuce-youxiang">
+                    <div><img src="images/zhuce-logo_03.png" alt=""></div>
+                    <div class="buzou lan">① 身份验证</div>
+                    <div class="buzou">② 修改密码</div>
+                    <div class="buzou">③ 修改成功</div>
+                    <div class="clear"></div>
+                    <div class="zhuce-list">
+                        <span>MT4账号：</span>
+                        <input type="text" required="" value="请输入您的MT4账号">
+                    </div>
+                    <div class="zhuce-list">
+                        <span>邮           箱：</span>
+                        <input type="text" required="" value="请输入您的邮箱" style="width: 40%">
+                        <div class="login" style="width: 38%;display:inline-block;float: right;margin:14px 0 0">60s
+                            重新发送
+                        </div>
+                    </div>
+                    <div class="zhuce-list">
+                        <span>手   机   号：</span>
+                        <input type="text" required="" value="请输入您的手机号码" style="width: 40%">
+                        <div class="login" style="width: 38%;display:inline-block;float: right;margin:14px 0 0">60s
+                            重新发送
+                        </div>
+                    </div>
+                    <div class="zhuce-list">
+                        <span>验   证   码：</span>
+                        <input type="text" required="" value="请输入您的收到的验证码">
+                    </div>
+                    <div class="login" style="">提  交</div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

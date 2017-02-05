@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改-密码</title>
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/vector.js"></script>
+    <script>
+        $(function () {
+            // 初始化 传入dom id
+            var victor = new Victor("container", "output");
+            var theme = [
+                ["#262626", "#3C3C3C"],
+            ]
+            var color = theme[0];
+            victor(color).set();
+
+        });
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="output">
+        <div class="scroll">
+            <div class="zhuce-bg">
+                <form action="" id="zhuce" class="zhuce-youxiang">
+                    <div><img src="images/zhuce-logo_03.png" alt=""></div>
+                    <div class="buzou">① 身份验证</div>
+                    <div class="buzou lan">② 修改密码</div>
+                    <div class="buzou">③ 修改成功</div>
+                    <div class="clear"></div>
+                    <div class="zhuce-list">
+                        <span>新   密   码：</span>
+                        <input type="text" required="" value="请输入您的新密码">
+                    </div>
+                    <div class="zhuce-list">
+                        <span>确 认 密 码：</span>
+                        <input type="text" required="" value="请和新密码保持一致">
+                    </div>
+                    <div class="login" style="">提  交</div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/vector.js"></script>
+    <script>
+        $(function () {
+            // 初始化 传入dom id
+            var victor = new Victor("container", "output");
+            var theme = [
+                ["#262626", "#3C3C3C"],
+            ]
+            var color = theme[0];
+            victor(color).set();
+
+        });
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="output">
+        <div class="scroll">
+            <div class="login-bg">
+                <form action="" id="form">
+                    <div class="logo"><img src="images/logo_03.png" alt=""></div>
+                    <p>SIGN IN</p>
+                    <input type="text" value="Login">
+                    <input type="password" value="Password">
+                    <div style="padding-left: 34px;position: relative">
+                        <input type="checkbox" style="position: absolute;top:1px;left: 10px;width: 18px;height: 18px"> 记住我 ？
+                    </div>
+                    <div class="login">登 录</div>
+                    <div class="img">
+                        <a href="zhuce.html"><img src="images/zhuce.png" alt=""></a>
+                        <a href="xiugai.html"><img src="images/wangji.png" alt=""></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

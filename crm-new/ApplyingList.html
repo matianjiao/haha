@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>crm系统</title>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport"-->
+    <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge"/>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="renderer" content="ie-stand"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/lanren.css"/>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        window.onload = function () {
+            var speed = 1 / 30 * Math.PI;
+            var Q = 4 / 3 * Math.PI;
+            var Q2 = 3 / 3 * Math.PI;
+            var Q3 = 3.5 / 3 * Math.PI;
+            var time = 20;
+            createQuaCircle("svg1");
+            doAnimation(Q, "svg1", speed, time);
+            showText("svg1", "人数", "18");
+            doAnimation(Q2, "svg2", speed, time);
+            showText("svg2", "交易手次", "18");
+            doAnimation(Q3, "svg3", speed, time);
+            showText("svg3", "入金金额", "18");
+            //创建1/4半圆
+        }
+        function doAnimation(Q, id, speed, time) {
+            var oSvg = document.getElementById(id);
+            var oSvgWidth = parseInt((oSvg.curentStyle ? oSvg.curentStyle : window.getComputedStyle(oSvg, null)).width);
+            oSvg.setAttribute("height", oSvgWidth);
+            //创建use元素的组合
+            var bgCircleG = document.createElementNS("http://www.w3.org/2000/svg", "g");
+            bgCircleG.setAttribute("transform", "translate(" + 0.5 * oSvgWidth + "," + 0.5 * oSvgWidth + ")");
+            createGradientBg(bgCircleG, oSvg, oSvgWidth);
+            var currentAngle = 0;
+            var rotateRirection;  //旋转的方向如果Q<=Math.PI rotateRirection 为1 大的弧度，如果Q>Math.PI rotateRirection为0 小的弧度
+            if (Q <= 0) {
+                //大圆
+                var smallCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                smallCircle.setAttribute("cx", 0);
+                smallCircle.setAttribute("cy", 0);
+                smallCircle.setAttribute("r", 0.3 * oSvgWidth + 1);
+                smallCircle.setAttribute("fill", "#e5e5e5");
+                bgCircleG.appendChild(smallCircle);
+                //小圆
+                drawSmallCircle(id, bgCircleG, oSvgWidth);
+            }
+            else if (Q > 0 && Q <= 2 * Math.PI) {
+                rotateRirection = judgeRirection(currentAngle);
+                currentAngle += speed;
+                var tId = null;
+                annimationCircle(id, bgCircleG, currentAngle, oSvgWidth, rotateRirection);
+                tId = setInterval(function () {
+                    if (currentAngle <= Q) {
+                        rotateRirection = judgeRirection(currentAngle);
+                        annimationCircle(id, bgCircleG, currentAngle, oSvgWidth, rotateRirection);
+                        currentAngle += speed;
+                        if (currentAngle >= Q) {
+                            currentAngle = Q;
+                            if (Q > Math.PI) {
+                                rotateRirection = judgeRirection(currentAngle);
+                            }
+                            annimationCircle(id, bgCircleG, currentAngle, oSvgWidth, rotateRirection);
+                            clearTimeout(tId);
+
+                        }
+                        ;
+                    }
+                    else {
+                        currentAngle = Q;
+                        rotateRirection = judgeRirection(currentAngle);
+                        annimationCircle(id, bgCircleG, currentAngle, oSvgWidth, rotateRirection);
+                        clearTimeout(tId);
+
+                    }
+                }, time);
+            }
+            else if (Q > 2 * Math.PI) {
+                drawSmallCircle(id, bgCircleG, oSvgWidth);
+            }
+
+        }
+        function createQuaCircle(id) {
+            var oSvg = document.getElementById(id);
+            var oSvgWidth = parseInt((oSvg.curentStyle ? oSvg.curentStyle : window.getComputedStyle(oSvg, null)).width);
+            var cr1 = cr2 = 0.5 * oSvgWidth;
+            var oPathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            var d = "M0,0" + " L 0," + -0.3 * oSvgWidth + " A" + 0.3 * oSvgWidth + "," + 0.3 * oSvgWidth + " 0 0,1 " + 0.3 * oSvgWidth + ",0 z";
+            oPathElement.id = "halfCircle";
+            oPathElement.setAttribute("d", d);
+            var omydefs = document.getElementById("mydefs");
+            omydefs.appendChild(oPathElement);
+        }
+        function createGradientBg(bgCircleG, oSvg) {
+
+            //创建第一个use元素
+            var bgCircle1 = document.createElementNS("http://www.w3.org/2000/svg", "use");
+            bgCircle1.setAttribute("fill", "url(#lightGreenGradient)");
+            bgCircle1.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "#halfCircle");
+            //创建第2个use元素并且旋转90度
+            var bgCircle2 = document.createElementNS("http://www.w3.org/2000/svg", "use");
+            bgCircle2.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "#halfCircle");
+            bgCircle2.setAttribute("fill", "url(#greenDeepGradient)");
+            bgCircle2.setAttribute("transform", "rotate(90)");
+            //创建第3个use元素并且旋转180度
+            var bgCircle3 = document.createElementNS("http://www.w3.org/2000/svg", "use");
+            bgCircle3.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "#halfCircle");
+            bgCircle3.setAttribute("fill", "url(#greenLightRedGradient)");
+            bgCircle3.setAttribute("transform", "rotate(180)");
+            //创建第4个use元素并且旋转270度
+            var bgCircle4 = document.createElementNS("http://www.w3.org/2000/svg", "use");
+            bgCircle4.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "#halfCircle");
+            bgCircle4.setAttribute("fill", "url(#LightRedGradient)");
+            bgCircle4.setAttribute("transform", "rotate(270)");
+            //将use元素追加到组合中
+            bgCircleG.appendChild(bgCircle1);
+            bgCircleG.appendChild(bgCircle2);
+            bgCircleG.appendChild(bgCircle3);
+            bgCircleG.appendChild(bgCircle4);
+            oSvg.appendChild(bgCircleG);
+        }
+        //动态圆遮挡边用灰色填充
+        function annimationCircle(id, bgCircleG, Q, oSvgWidth, rotateRirection) {
+            if (oPathElement2 = document.getElementById("half" + id)) {
+                bgCircleG.removeChild(oPathElement2);
+            }
+            ;
+            var oPathElement2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            var d = "M0,0" + " L" + (0.3 * oSvgWidth) * Math.sin(Q) + "," + (-(0.3 * oSvgWidth) * Math.cos(Q)) + " A" + (0.3 * oSvgWidth) + "," + (0.3 * oSvgWidth) + " 0 " + rotateRirection + ",1 " + "0 " + (-0.3 * oSvgWidth) + " z";
+            oPathElement2.id = "half" + id;
+            oPathElement2.setAttribute("d", d);
+            oPathElement2.setAttribute("stroke", "#DDE4ED");
+            oPathElement2.setAttribute("fill", "#DDE4ED");
+            bgCircleG.appendChild(oPathElement2);
+            drawSmallCircle(id, bgCircleG, oSvgWidth);
+        }
+        // 圆弧中比较小的圆用白色填充
+        function drawSmallCircle(id, bgCircleG, oSvgWidth) {
+            if (smallCircle2 = document.getElementById("smallCircle" + id)) {
+                bgCircleG.removeChild(smallCircle2);
+            }
+            ;
+            var smallCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            smallCircle.id = "smallCircle" + id;
+            smallCircle.setAttribute("cx", 0);
+            smallCircle.setAttribute("cy", 0);
+            smallCircle.setAttribute("r", 0.25 * oSvgWidth + 1);
+            smallCircle.setAttribute("stroke", "#F0F5FB");
+            smallCircle.setAttribute("stroke-width", "4");
+            smallCircle.setAttribute("fill", "#F0F5FB");
+            bgCircleG.appendChild(smallCircle);
+        }
+        //rotateRirection 旋转的方向如果<=Math.PI rotateRirection 为1 大的弧度，如果>Math.PI rotateRirection为0 小的弧度
+        function judgeRirection(angle) {
+            if (angle <= Math.PI) {
+                rotateRirection = 1;
+            }
+            else {
+                rotateRirection = 0;
+            }
+            return rotateRirection;
+        }
+        function showText(id, value, fontSize) {
+            var oSvg = document.getElementById(id);
+            var oSvgWidth = parseInt((oSvg.curentStyle ? oSvg.curentStyle : window.getComputedStyle(oSvg, null)).width);
+            if (oSvgWidth < 480) {
+                fontSize = 0.8 * parseInt(fontSize);
+            }
+            ;
+            var otext = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            var oTspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+            otext.setAttribute("x", parseInt(0.5 * oSvgWidth));
+            otext.setAttribute("y", parseInt(0.5 * oSvgWidth));
+            otext.setAttribute("font-size", fontSize);
+            otext.setAttribute("z-index", 99999);
+            otext.setAttribute("font-weight", "500");
+            otext.setAttribute("font-family", "微软雅黑");
+            otext.setAttribute("text-anchor", "middle");
+            otext.setAttribute("dominant-baseline", "middle");
+            otext.setAttribute("fill", "#4A516A");
+            var oTextCon = document.createTextNode(value);
+            otext.appendChild(oTextCon);
+            oSvg.appendChild(otext);
+        }
+
+    </script>
+</head>
+<body id="body">
+<!--<div class=" bg-blur"></div>-->
+<div class="scall">
+    <div class="content-front">
+        <div class="slide-left font16">
+            <div class="logo" style="background: url('./images/logo.png') no-repeat center center"></div>
+            <div class="user">
+                <div class="user-item" style="background: url(images/user_03.png); background-size: cover;"></div>
+                <div class="name font14">
+                    <p>1000</p>
+                    <p>安琪</p>
+                </div>
+                <div class="clear"></div>
+                <p class="font14" style="padding-left: 30px;margin-top: 10px">余额 : $53465</p>
+            </div>
+            <ul class="fu">
+                <li><span class="icons icon1"></span> <a href="index.html">首页</a></li>
+
+                <div class="click" zhankai="false">
+                    <li><span class="icons icon2"></span>个人信息 <span class="open"></span></li>
+                    <ul class="zi">
+                        <a href="UserInfo.html">账户信息</a>
+                        <a href="Bank.html">银行信息</a>
+                        <a href="setPassword.html">密码修改</a>
+                    </ul>
+                </div>
+
+                <li>
+                    <a href="ThisOrderList.html"><span class="icons icon3"></span>历史订单</a>
+                </li>
+
+                <li>
+                    <a href="MyDaiLi.html"><span class="icons icon4"></span>我的代理</a>
+                </li>
+
+                <li>
+                    <a href="ThisOrderList.html"><span class="icons icon5"></span>持仓订单</a>
+                </li>
+
+                <div class="click" zhankai="false">
+                    <li><span class="icons icon6"></span>资金管理 <span class="open"></span></li>
+                    <ul class="zi">
+                        <a href="InputMoney.html">入金</a>
+                        <a href="OutputMoney.html">出金</a>
+                        <a href="moneyList.html">出入金记录</a>
+                    </ul>
+                </div>
+
+                <div class="click" zhankai="true" style="background:#101421 ;">
+                    <li style="color: #85888A"><span class="icons icon7"
+                                                     style="background:url(./images/icon_77.png)"></span>代理专区 <span
+                            class="open"></span></li>
+                    <ul class="zi kai">
+                        <a href="Team.html">团队管理</a>
+                        <a href="ApplyingList.html" class="current">总代理申请</a>
+                        <a href="lowerAgent.html">下级代理申请</a>
+                        <a href="rake-back.html">返佣记录</a>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div class="slide-right">
+            <header class="bg-color font16">
+                <div class="zuo-head">
+                    <img src="images\icon_77.png" alt=""> 代理专区 > 代理申请记录
+                </div>
+                <div class="you-head">
+                    <div class="icon4 icon4-1"></div>
+                    <div class="icon4 icon4-2"></div>
+                    <div class="icon4 icon4-3"></div>
+                    <div class="icon4 icon4-4"></div>
+                    <div class="clear"></div>
+                </div>
+            </header>
+
+
+            <div class="row setPassword">
+                <!--出入金记录-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 zhanghu">
+                    <div class="bg-color list-item">
+                        <div class="shuaxin"><img src="images/shuaxin_03.png" alt=""></div>
+                        <p>代理申请记录</p>
+
+                        <div class="InOutList">
+                            <!--比例-->
+                            <div class="wrap clearfix" id="wrap">
+                                <svg id="svg1" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <defs id="mydefs">
+                                        <linearGradient id="lightGreenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#01dcfe" stop-opacity="0.2"></stop>
+                                            <stop offset="100%" stop-color="#01dcfe" stop-opacity="0.5"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="greenDeepGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#01dcfe" stop-opacity="0.5"></stop>
+                                            <stop offset="100%" stop-color="#01dcfe" stop-opacity="1"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="greenLightRedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#01dcfe" stop-opacity="1"></stop>
+                                            <stop offset="100%" stop-color="#1f92d7" stop-opacity="0.5"></stop>
+                                        </linearGradient>
+                                        <linearGradient id="LightRedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#1f92d7" stop-opacity="0.5"></stop>
+                                            <stop offset="100%" stop-color="#1f92d7" stop-opacity="1"></stop>
+                                        </linearGradient>
+                                    </defs>
+
+                                </svg>
+                                <svg id="svg2" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+                                <svg id="svg3" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+                                <div style="width: 33%;float: left;text-align: center;">4/5</div>
+                                <div style="width: 33%;float: left;text-align: center">50/100</div>
+                                <div style="width: 33%;float: left;text-align: center">800/1200</div>
+                            </div>
+                            <p>注：当代理人数达到0人以上，交易手次达到0次以上，交易金额达到0.00以上，才能申请代理。</p>
+                            <button>申请代理</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
